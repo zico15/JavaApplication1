@@ -28,6 +28,7 @@ public class View extends javax.swing.JFrame {
         initComponents();
         View.ViewMain = this;
         load();
+         
     }
 
     
@@ -43,7 +44,7 @@ public class View extends javax.swing.JFrame {
         
         };
      t.start();
-       View.clinte =  new Clinte(8000);
+       View.clinte =  new Clinte(3000);
             View.clinte.start(); 
             setView(new Login());
         
@@ -64,7 +65,6 @@ public class View extends javax.swing.JFrame {
         setIconImages(null);
         setMaximumSize(new java.awt.Dimension(500, 500));
         setMinimumSize(new java.awt.Dimension(500, 500));
-        setPreferredSize(new java.awt.Dimension(500, 500));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 500));
 

@@ -26,13 +26,14 @@ public class Clinte extends Thread{
     public BufferedReader brinp = null;
     public DataOutputStream out = null;
     public String nickName = "local";
+    public String url = "localhost";
     public HashMap<String,comandoEvent> events = new HashMap<>();
     
     public Clinte(int porta){
     
-    
+    // url = "192.168.1.226" ;
         try {
-            socket = new Socket("localhost", porta);
+            socket = new Socket(url, porta);
         } catch (IOException ex) {
             Logger.getLogger(Clinte.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -79,7 +80,8 @@ public class Clinte extends Thread{
                 }else  if(!line.trim().isEmpty()){ 
                     
                     
-                    comandos(line);
+                    System.out.println("line: "+line);
+                    //comandos(line);
                     //System.out.println("Line: "+line);
                 }
                 
@@ -95,7 +97,8 @@ public class Clinte extends Thread{
 
     public boolean isConnected(){
     
-    
+ 
+   
         return socket != null && socket.isConnected();
     }
     
